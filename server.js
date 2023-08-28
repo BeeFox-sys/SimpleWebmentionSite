@@ -168,7 +168,7 @@ const urlOrNull = (url, base = undefined) => {
 };
 
 app.post("/webmentions", async (req, res)=>{
-    
+    return res.sendStatus(501)
     try {
 
         let source = urlOrNull(req.body.source, `${req.headers["x-forwarded-proto"] ?? req.protocol}://${req.get("host")}`);
