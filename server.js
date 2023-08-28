@@ -231,17 +231,18 @@ async function sendWebmention(sourceUrl, targetUrl){
             let microformats = mf2(await sourceRes.text(), {
                 baseUrl: target.origin
             })
+            console.log(microformats.rels)
             if(microformats.rels.webmention){
                 fetch(
                     microformats.rels.webmention[0],
                     {
                         method: "POST",
-                        "body": JSON.stringify({source: sourceUrl, target: targetUrl}),
+                        "body": `source=${sourceUrl}&target=${targetUrl}`,
                         headers: {
-                            "Content-Type": "application/json"
+                            "Content-Type": "application/x-www-form-urlencoded"
                         }
                     }
-                )
+                ).then(console.log)
             }
         }
 }
