@@ -39,11 +39,11 @@ async function consumePost(postPath, optinalPostID){
 
     if(front.data.id){
         posts.set(front.data.id, front.data);
-        if(!front.data.published && postDate([front.data.id, front.data]) && process.env.BRIDGY) {
-            await sendWebmention(`https://${process.env.DOMAIN}/post/${front.data.id}`,"https://fed.brid.gy/")
-            front.data.published = true;
-            savePostData(postPath, front.data)
-        }
+        // if(!front.data.published && postDate([front.data.id, front.data]) && process.env.BRIDGY) {
+        //     await sendWebmention(`https://${process.env.DOMAIN}/post/${front.data.id}`,"https://fed.brid.gy/")
+        //     front.data.published = true;
+        //     savePostData(postPath, front.data)
+        // }
     } else {
         idQueue.push(postPath);
     }
@@ -245,6 +245,10 @@ async function sendWebmention(sourceUrl, targetUrl){
             }
         }
 }
+
+// Activity Pub Stuff. Ugh i didn't want to do this.
+
+
 
 // Update Posts
 
