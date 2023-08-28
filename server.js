@@ -231,7 +231,6 @@ async function sendWebmention(sourceUrl, targetUrl){
             let microformats = mf2(await sourceRes.text(), {
                 baseUrl: target.origin
             })
-            console.log(microformats.rels)
             if(microformats.rels.webmention){
                 fetch(
                     microformats.rels.webmention[0],
@@ -242,7 +241,7 @@ async function sendWebmention(sourceUrl, targetUrl){
                             "Content-Type": "application/x-www-form-urlencoded"
                         }
                     }
-                ).then(console.log)
+                )
             }
         }
 }
