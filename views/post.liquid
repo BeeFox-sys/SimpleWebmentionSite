@@ -1,0 +1,28 @@
+{% assign id = post[0] %}
+{% assign data = post[1] %}
+<article class="h-entry">
+    <div><a href="/post/{{id}}"><time class="dt-published" datetime="{{data.date}}">{{data.date | date: "%d-%m-%Y"}}</time></a></div>
+    {% if data.in-reply-to %}
+        <div><a class="u-in-reply-to" href="{{data.in-reply-to}}">In Reply To ⮐</a></div>
+    {% endif %}
+    {% if data.subject %}
+        <details>
+            <summary class="p-summary">{{data.subject}}</summary>
+            <div class="e-content">
+                {{data.content}}
+            </div>
+        </details>
+    {% else %}
+        <div class="e-content">
+            {{data.content}}
+        </div>
+    {% endif %}
+    {% if data.hashtags %}
+        <div>
+            {% for tag in data.hashtags %}
+                <a href="?tag={{tag}}"class="p-category">{{tag}}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <a class="u-bridgy-fed" href="https://fed.brid.gy/"></a>
+</article>

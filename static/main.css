@@ -1,0 +1,68 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  background-color: #333;
+  color: #eee;
+  padding-inline: 4ch;
+  max-width: 120ch;
+  margin-inline: auto;
+}
+
+.h-card {
+  display: flex;
+  flex-direction: row;
+  border: white 2px solid;
+  justify-content: center;
+  width: 80%;
+  min-width: 80ch;
+  margin-inline: auto;
+}
+.h-card .u-photo {
+  flex-grow: 1;
+  max-width: 20ch;
+}
+.h-card > div {
+  flex-grow: 3;
+  display: flex;
+  padding-inline: 2ch;
+  justify-content: center;
+  flex-direction: column;
+}
+.h-card > div .identity {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: lightblue;
+}
+a:visited {
+  color: #ea83ea;
+}
+
+nav {
+  width: max-content;
+  margin-inline: auto;
+  margin-block: 2ch;
+}
+
+.h-entry {
+  border: white 2px solid;
+  margin-block: 2ch;
+  padding: 2ch;
+}
+.h-entry .p-category {
+  display: inline-block;
+  background-color: #eee;
+  color: #222;
+  padding-inline: 0.5ch;
+  min-width: 4ch;
+  text-align: center;
+}
+.h-entry .p-category::before {
+  content: "#";
+}

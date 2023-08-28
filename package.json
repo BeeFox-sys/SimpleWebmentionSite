@@ -1,0 +1,29 @@
+{
+  "name": "simplewebmentionsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cron": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "feed": "^4.2.2",
+    "frontmatter": "^0.0.3",
+    "liquidjs": "^10.9.1",
+    "markdown-it": "^13.0.1",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-bracketed-spans": "^1.0.1",
+    "microformats-parser": "^1.4.1",
+    "node-fetch": "^3.3.2",
+    "sqlite": "^5.0.1",
+    "yaml": "^2.3.1"
+  }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="webmention" href="/webmentions">
+</head>
+<body>
+    <h1><a href="/">TITLE</a></h1>
+    {% include 'h-card.liquid' %}
+    <nav><a href="/">Newest First</a> | <a href="/oldest">Oldest First</a></nav>
+    <hr>
+    {% for post in posts %}
+        {% include 'post.liquid' %}
+    {% endfor %}
+</body>
+</html>
